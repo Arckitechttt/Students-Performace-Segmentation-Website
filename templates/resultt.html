@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Students Performance</title>
+  </head>
+
+  <body class="font-gill sans bg-cyan-900">
+    <div class="container mx-auto flex justify-center my-12">
+      <div class="bg-white w-full rounded-lg xl:w-3/4 lg:w-11/12 p-5" style="box-shadow: 3px 5px 6px 7px rgba(20,20,20,0.4);">
+        <a href="/" class="hover:text-indigo-500 w-1/12">
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 inline"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+
+          <p class="inline">Return</p>
+
+        </a>
+        <h3 class="pt-4 text-xl text-center">Hello, <b>{{name}}</b> !</h3>
+        <h3 class="text-2xl text-center">Here is your result</h3>
+        <div class="flex justify-center">
+          <img
+            src="{{ url_for('static', filename='images/student.jpg') }}"
+            alt="student"
+            class="w-96 mt-3"
+          />
+        </div>
+        <h2 class="text-center text-bold bg-indigo-500 hover:bg-indigo-400 text-white text-xl p-2 mt-4 mx-16 rounded-lg">
+          {{ prediction }}
+        </h2>
+        <h4 class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg">
+          <b>{{ grade }}</b>
+        </h4>
+      </div>
+    </div>
+  </body>
+</html>
