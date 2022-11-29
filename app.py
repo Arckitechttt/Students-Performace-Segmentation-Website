@@ -44,7 +44,7 @@ def resultt():
             prediction = 'Your Are a Good Student!'
             grade = 'Your Grade is B'
         elif float(result) == 2:
-            prediction = 'Your Are a Fucking Stupid Idiot Autistic Student!'
+            prediction = 'Your Are a Bad Student!'
             grade = 'Your Grade is C'
 
         return render_template("resultt.html", prediction=prediction, name=name, grade=grade)

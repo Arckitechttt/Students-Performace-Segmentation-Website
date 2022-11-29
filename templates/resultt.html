@@ -2,47 +2,239 @@
   <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Students Performance</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      body {
+        overflow: hidden;
+      }
+      
+      section {
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #f7f7fe, #dff1ff);
+      }
+      
+      section .colour {
+        position: absolute;
+        filter: blur(150px);
+      }
+      
+      section .colour:nth-child(1) {
+        top: -350px;
+        width: 600px;
+        height: 600px;
+        background: #bf4ad4;
+      }
+      
+      section .colour:nth-child(2) {
+        left: 100px;
+        width: 500px;
+        height: 500px;
+        bottom: -150px;
+        background: #ffa500;
+      }
+      
+      section .colour:nth-child(3) {
+        right: 100px;
+        bottom: 50px;
+        width: 300px;
+        height: 300px;
+        background: #2b67f3;
+      }
+      
+      .box {
+        position: relative;
+      }
+      
+      .box .square {
+        position: absolute;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.1);
+        animation-delay: calc(-1s * var(--i));
+        animation: animate 10s linear infinite;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      @keyframes animate {
+        0%,
+        100% {
+          transform: translateY(-40px);
+        }
+      
+        50% {
+          transform: translateY(40px);
+        }
+      }
+      
+      .box .square:nth-child(1) {
+        top: -50px;
+        left: -60px;
+        width: 100px;
+        height: 100px;
+      }
+      
+      .box .square:nth-child(2) {
+        z-index: 2;
+        top: 150px;
+        left: -100px;
+        width: 120px;
+        height: 120px;
+      }
+      
+      .box .square:nth-child(3) {
+        z-index: 2;
+        width: 80px;
+        height: 80px;
+        right: -50px;
+        bottom: -60px;
+      }
+      
+      .box .square:nth-child(4) {
+        left: 100px;
+        width: 50px;
+        height: 50px;
+        bottom: -80px;
+      }
+      
+      .box .square:nth-child(5) {
+        top: -80px;
+        left: 140px;
+        width: 60px;
+        height: 60px;
+      }
+      
+      .container {
+        width: 400px;
+        display: flex;
+        min-height: 400px;
+        position: relative;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .form {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        position: relative;
+      }
+      
+      .form h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        position: relative;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+      }
+      
+      .form h2::before {
+        left: 0;
+        width: 80px;
+        height: 4px;
+        content: '';
+        bottom: -10px;
+        background: #fff;
+        position: absolute;
+      }
+      
+      .form .input__box {
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      .form .input__box input {
+        width: 100%;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .form::placeholder {
+        color: #fff;
+      }
+      
+      .form .input__box input[type='submit'] {
+        color: #666;
+        cursor: pointer;
+        background: #fff;
+        max-width: 100px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      
+      .forget {
+        color: #fff;
+        margin-top: 5px;
+      }
+      
+      .forget a {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+    </style>
   </head>
 
-  <body class="font-gill sans bg-cyan-900">
-    <div class="container mx-auto flex justify-center my-12">
-      <div class="bg-white w-full rounded-lg xl:w-3/4 lg:w-11/12 p-5" style="box-shadow: 3px 5px 6px 7px rgba(20,20,20,0.4);">
-        <a href="/" class="hover:text-indigo-500 w-1/12">
+  <body>
+    <section>
+      <div class="colour"></div>
+      <div class="colour"></div>
+      <div class="colour"></div>
+      <div class="box">
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+        <div class="container">
+          <div class="form">
+            
+            <h3 class="pt-4 text-xl text-center">Hello, <b>{{ name }}</b> !</h3>
+            <h3 class="text-2xl text-center">Here is your result</h3>
+            <div class="flex justify-center">
+              <img src="{{ url_for('static', filename = 'images/student.jpg') }}" alt="student" class="w-96 mt-3" />
+            </div>
+            <h2 class="text-center text-bold bg-indigo-500 hover:bg-indigo-400 text-white text-xl p-2 mt-4 mx-16 rounded-lg">{{ prediction }}</h2>
+            <h4 class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg"><b>{{ grade }}</b></h4>
+            <a href="/" class="hover:text-indigo-500 w-1/12">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline">
+                <path />
+              </svg>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-4 h-4 inline"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-
-          <p class="inline">Return</p>
-
-        </a>
-        <h3 class="pt-4 text-xl text-center">Hello, <b>{{name}}</b> !</h3>
-        <h3 class="text-2xl text-center">Here is your result</h3>
-        <div class="flex justify-center">
-          <img
-            src="{{ url_for('static', filename='images/student.jpg') }}"
-            alt="student"
-            class="w-96 mt-3"
-          />
+              <p class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg">Return</p>
+            </a>
+          </div>
         </div>
-        <h2 class="text-center text-bold bg-indigo-500 hover:bg-indigo-400 text-white text-xl p-2 mt-4 mx-16 rounded-lg">
-          {{ prediction }}
-        </h2>
-        <h4 class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg">
-          <b>{{ grade }}</b>
-        </h4>
       </div>
-    </div>
+    </section>
   </body>
 </html>
