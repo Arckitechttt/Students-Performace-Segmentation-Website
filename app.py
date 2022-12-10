@@ -1,54 +1,63 @@
-# ImportLibraries
-import os
+# Import Libraries
 import numpy as np
-import flask
+import pandas as pd
 import pickle
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, render_template, url_for, redirect
+from flask import request as re
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 
 # Instance of the class
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 # Telling Flask that the indexx.html should trigger the function index()
-@app.route('/')
-@app.route('/indexx')
-def indexx():
-    AuthorName = "Arckitecht"
-    return render_template("indexx.html", user=AuthorName)
+@app.route("/")
+def index():
+    return render_template("indexx.html")
 
-
-# Creating a function which is Predictor(predict_list) that contains 1 parameter which is predict_list
-def Predictor(predict_list):
-    predictt = np.array(predict_list).reshape(1, 2)
-    loaded_model = pickle.load(
-        open("./model/model.pkl", "rb"))  # Load the model
-    # Predict the values using Loaded Model
-    result = loaded_model.predict(predictt)
+# Machine Learning Processing
+def Predictor(predicto):
+    sc_reload = pickle.load(open("./model/sc.pkl", "rb"))
+    dataSP = sc_reload.transform(predicto)
+    
+    pca_reload = pickle.load(open("./model/pca.pkl", "rb"))
+    principalData = pca_reload.transform(dataSP)
+    
+    KMeans = pickle.load(open("./model/model.pkl", "rb"))
+    result = KMeans.predict(principalData)
+    
     return result[0]
 
-# Creating a function to show the result from our Clustering Model
-@app.route('/resultt', methods=['POST'])
+# Get the Input, Call and fit the Input to the Predictor() function, and Describe each Clusters
+@app.route('/resultt', methods=['POST', 'GET'])
 def resultt():
-    if request.method == 'POST':
-        name = request.form['name']
-        mathscore = request.form['mathscore']
-        readingscore = request.form['readingscore']
+    if re.method == 'POST':
+        name = re.form['name']
+        parent = re.form['parent']
+        lunch = re.form['lunch']
+        test = re.form['test']
+        math = re.form['math']
+        reading = re.form['reading']
 
-        predict_list = list(map(float, [mathscore, readingscore]))
-        result = Predictor(predict_list)
+        predicto = pd.DataFrame(data=[[parent, lunch, test, math, reading]])
+        result = Predictor(predicto)
 
         if float(result) == 0:
-            prediction = 'You Are an Excellent Student!'
-            grade = 'Your Grade is A'
+            prediction = "Grade A Student"
         elif float(result) == 1:
-            prediction = 'Your Are a Good Student!'
-            grade = 'Your Grade is B'
+            prediction = "Grade B Student"
         elif float(result) == 2:
-            prediction = 'Your Are a Bad Student!'
-            grade = 'Your Grade is C'
+            prediction = "Grade C Student"
+        elif float(result) == 3:
+            prediction = "Grade D Student"
+        elif float(result) == 4:
+            prediction = "Grade E Student"
+        elif float(result) == 5:
+            prediction = "Grade F Student"
 
-        return render_template("resultt.html", prediction=prediction, name=name, grade=grade)
-
+        return render_template("resultt.html", prediction=prediction, name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)

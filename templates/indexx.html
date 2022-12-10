@@ -8,54 +8,55 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
-    
-    body {
-        overflow: hidden;
-    }
-    
-    section {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      body {
+        overflow-y: auto;
+      }
+      
+      section {
         display: flex;
         min-height: 100vh;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
         background: linear-gradient(to bottom, #f7f7fe, #dff1ff);
-    }
-    
-    section .colour {
+      }
+      
+      section .colour {
         position: absolute;
         filter: blur(150px);
-    }
-    
-    section .colour:nth-child(1) {
+      }
+      
+      section .colour:nth-child(1) {
         top: -350px;
         width: 600px;
         height: 600px;
         background: #bf4ad4;
-    }
-    
-    section .colour:nth-child(2) {
+      }
+      
+      section .colour:nth-child(2) {
         left: 100px;
         width: 500px;
         height: 500px;
         bottom: -150px;
         background: #ffa500;
-    }
-    
-    section .colour:nth-child(3) {
+      }
+      
+      section .colour:nth-child(3) {
         right: 100px;
         bottom: 50px;
         width: 300px;
         height: 300px;
         background: #2b67f3;
-    }
-    
-    .box {
+      }
+      
+      .box {
         position: relative;
-    }
-    
-    .box .square {
+      }
+      
+      .box .square {
         position: absolute;
         border-radius: 10px;
         backdrop-filter: blur(5px);
@@ -66,58 +67,57 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    @keyframes animate {
-    
+      }
+      
+      @keyframes animate {
         0%,
         100% {
-            transform: translateY(-40px);
+          transform: translateY(-40px);
         }
-    
+      
         50% {
-            transform: translateY(40px);
+          transform: translateY(40px);
         }
-    }
-    
-    .box .square:nth-child(1) {
+      }
+      
+      .box .square:nth-child(1) {
         top: -50px;
         left: -60px;
         width: 100px;
         height: 100px;
-    }
-    
-    .box .square:nth-child(2) {
+      }
+      
+      .box .square:nth-child(2) {
         z-index: 2;
         top: 150px;
         left: -100px;
         width: 120px;
         height: 120px;
-    }
-    
-    .box .square:nth-child(3) {
+      }
+      
+      .box .square:nth-child(3) {
         z-index: 2;
         width: 80px;
         height: 80px;
         right: -50px;
         bottom: -60px;
-    }
-    
-    .box .square:nth-child(4) {
+      }
+      
+      .box .square:nth-child(4) {
         left: 100px;
         width: 50px;
         height: 50px;
         bottom: -80px;
-    }
-    
-    .box .square:nth-child(5) {
+      }
+      
+      .box .square:nth-child(5) {
         top: -80px;
         left: 140px;
         width: 60px;
         height: 60px;
-    }
-    
-    .container {
+      }
+      
+      .container {
         width: 400px;
         display: flex;
         min-height: 400px;
@@ -131,40 +131,40 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .form {
+      }
+      
+      .form {
         width: 100%;
         height: 100%;
         padding: 40px;
         position: relative;
-    }
-    
-    .form h2 {
+      }
+      
+      .form h2 {
         color: #fff;
         font-size: 24px;
         font-weight: 600;
         position: relative;
         letter-spacing: 1px;
         margin-bottom: 40px;
-    }
-    
-    .form h2::before {
+      }
+      
+      .form h2::before {
         left: 0;
         width: 80px;
         height: 4px;
-        content: "";
+        content: '';
         bottom: -10px;
         background: #fff;
         position: absolute;
-    }
-    
-    .form .input__box {
+      }
+      
+      .form .input__box {
         width: 100%;
         margin-top: 20px;
-    }
-    
-    .form .input__box input {
+      }
+      
+      .form .input__box input {
         width: 100%;
         color: #fff;
         border: none;
@@ -178,101 +178,127 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .form::placeholder {
+      }
+
+      ::-webkit-input-placeholder {
+        font-style: italic;
         color: #fff;
-    }
-    
-    .form .input__box input[type="submit"] {
+        font-size: small;
+      }
+      
+      .form .input__box input[type='submit'] {
         color: #666;
         cursor: pointer;
         background: #fff;
         max-width: 100px;
         font-weight: 600;
         margin-bottom: 20px;
-    }
-    
-    .forget {
+      }
+      
+      .forget {
         color: #fff;
         margin-top: 5px;
-    }
-    
-    .forget a {
+      }
+      
+      .forget a {
         color: #fff;
         font-weight: 600;
         text-decoration: none;
-    }
-  </style>
-
+      }
+    </style>
   </head>
   <body>
-    <section>
+    <section id="input_form">
       <div class="colour"></div>
       <div class="colour"></div>
       <div class="colour"></div>
       <div class="box">
-          <div class="square" style="--i: 0"></div>
-          <div class="square" style="--i: 1"></div>
-          <div class="square" style="--i: 2"></div>
-          <div class="square" style="--i: 3"></div>
-          <div class="square" style="--i: 4"></div>
-          <div class="container">
-              <div class="form">
-                  <h2>Student Performance</h2>
-                  <h3> Input your scores and we'll predict that you are an
-                    <b>excellent</b> student, <b>good</b> student, or <b>bad</b> student.
-                  </h3>
-                  <form action="/resultt" method="POST">
-                    
-                      <div class="input__box" for="name">
-                        <input required
-                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="name"
-                        type="text"
-                        placeholder="Enter Your Name"
-                        name="name"
-                      />
-                      </div>
-                      <div class="input__box" for="mathscore">
-                        <input required
-                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="mathscore"
-                        type="number"
-                        placeholder="Enter Your Math Score"
-                        name="mathscore"
-                        min="0"
-                        max="100"
-                      />
-                      </div>
-
-                      <div class="input__box" for="readingscore">
-                        <input required
-                  class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                  id="readingscore"
-                  type="number"
-                  placeholder="Enter Your Reading Score"
-                  name="readingscore"
-                  min="0"
-                  max="100"
-                />
-                      </div>
-
-                      <div class="input__box" >
-                        <input required
-                        class="w-full px-4 py-2 font-bold text-white bg-indigo-500 cursor-pointer rounded-full hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
-                        type="submit"
-                        value="Submit"
-                      >
-                      
-                  </form>
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+        <div class="container">
+          <div class="form" action="http://localhost:5000/resultt" method="post" id="cluster_form">
+            <h2>Students Performance Predictor</h2>
+            <font size="1">Click <a href="https://colab.research.google.com/drive/1vg2jqueO_wlnDKMkgKWMgsB-TndnSeF-?usp=sharing" target="_blank" style="color: greenyellow;"><b>here</b></a> to view the Clustering Model that is used to Predict the Students Performance</font>
+            <form action="/resultt" method="POST">
+              <div class="input__box" for="name">
+                Name
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Fill Their Name" name="name" />
               </div>
+              <div class="input__box" for="parent">
+                Parental Level of Education
+                <font size="1" color="red">
+                  <br />
+                  *Notes :
+                  <br />
+                  0 = Master's Degree
+                  <br />
+                  1 = Bachelor's Degree
+                  <br />
+                  2 = Associate's Degree
+                  <br />
+                  3 = Been to College
+                  <br />
+                  4 = High School
+                  <br />
+                  5 = Been to High School
+                </font>
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="parent" type="number" placeholder="Fill Their Parental Level of Education" name="parent" min="0" max="5" />
+              </div>
+              <div class="input__box" for="lunch">
+                Lunch Fulfillment
+                <font size="1" color="red">
+                  <br />
+                  *Notes :
+                  <br />
+                  1 = Fulfilled
+                  <br />
+                  0 = Not / Less Fulfilled
+                </font>
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="lunch" type="number" placeholder="Fill Their Lunch Fulfillment" name="lunch" min="0" max="1" />
+              </div>
+              <div class="input__box" for="test">
+                Test Preparation Completion
+                <font size="1" color="red">
+                  <br />
+                  *Notes :
+                  <br />
+                  1 = Completed
+                  <br />
+                  0 = Not Completed
+                </font>
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="test" type="number" placeholder="Fill Their Test Preparation Course Completion" name="test" min="0" max="1" />
+              </div>
+              <div class="input__box" for="math">
+                Mathematic Score
+                <font size="1" color="red">
+                  <br />
+                  *Notes :
+                  <br />
+                  0 - 100
+                </font>
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="math" type="number" placeholder="Fill Their Mathematic Score" name="math" min="0" max="100" />
+              </div>
+              <div class="input__box" for="reading">
+                Reading Score
+                <font size="1" color="red">
+                  <br />
+                  *Notes :
+                  <br />
+                  0 - 100
+                </font>
+                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="reading" type="number" placeholder="Fill Their Reading Score" name="reading" min="0" max="100" />
+              </div>
+
+              <div class="input__box">
+                <input required class="w-full px-4 py-2 font-bold text-white bg-indigo-500 cursor-pointer rounded-full hover:bg-indigo-700 focus:outline-none focus:shadow-outline" type="submit" id="nextBtn" value="Predict" />
+              </div>
+            </form>
           </div>
+        </div>
       </div>
-  </section>
-
-
-
-   
+    </section>
   </body>
 </html>

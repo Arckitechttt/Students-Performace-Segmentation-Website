@@ -205,7 +205,7 @@
   </head>
 
   <body>
-    <section>
+    <section id="response">
       <div class="colour"></div>
       <div class="colour"></div>
       <div class="colour"></div>
@@ -217,21 +217,21 @@
         <div class="square" style="--i: 4"></div>
         <div class="container">
           <div class="form">
-            
-            <h3 class="pt-4 text-xl text-center">Hello, <b>{{ name }}</b> !</h3>
-            <h3 class="text-2xl text-center">Here is your result</h3>
+            <h3 class="pt-4 text-xl text-center">Student <b>{{ name }}</b></h3>
+            <font size="3"><div class="text-center">Prediction Result</div></font>
             <div class="flex justify-center">
-              <img src="{{ url_for('static', filename = 'images/student.jpg') }}" alt="student" class="w-96 mt-3" />
+              <img src="{{ url_for('static', filename = 'images/student.jpg') }}" alt="student" class="w-96 mt-3"/>
             </div>
+
             <h2 class="text-center text-bold bg-indigo-500 hover:bg-indigo-400 text-white text-xl p-2 mt-4 mx-16 rounded-lg">{{ prediction }}</h2>
-            <h4 class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg"><b>{{ grade }}</b></h4>
+
             <a href="/" class="hover:text-indigo-500 w-1/12">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline">
                 <path />
               </svg>
-
               <p class="text-center text-bold bg-gray-400 hover:bg-gray-300 text-white text-xl p-2 mt-4 mx-16 rounded-lg">Return</p>
             </a>
+
           </div>
         </div>
       </div>
