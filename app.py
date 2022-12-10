@@ -45,17 +45,17 @@ def resultt():
         result = Predictor(predicto)
 
         if float(result) == 0:
-            prediction = "Grade A Student"
+            prediction = "A"
         elif float(result) == 1:
-            prediction = "Grade B Student"
+            prediction = "B"
         elif float(result) == 2:
-            prediction = "Grade C Student"
+            prediction = "C"
         elif float(result) == 3:
-            prediction = "Grade D Student"
+            prediction = "D"
         elif float(result) == 4:
-            prediction = "Grade E Student"
+            prediction = "E"
         elif float(result) == 5:
-            prediction = "Grade F Student"
+            prediction = "F"
 
         return render_template("resultt.html", prediction=prediction, name=name)
 

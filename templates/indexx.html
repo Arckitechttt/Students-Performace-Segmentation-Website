@@ -179,7 +179,7 @@
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
-
+      
       ::-webkit-input-placeholder {
         font-style: italic;
         color: #fff;
@@ -221,74 +221,88 @@
         <div class="container">
           <div class="form" action="http://localhost:5000/resultt" method="post" id="cluster_form">
             <h2>Students Performance Predictor</h2>
-            <font size="1">Click <a href="https://colab.research.google.com/drive/1vg2jqueO_wlnDKMkgKWMgsB-TndnSeF-?usp=sharing" target="_blank" style="color: greenyellow;"><b>here</b></a> to view the Clustering Model that is used to Predict the Students Performance</font>
+            <div>
+              <font size="3">
+                This is a Website with Machine Learning feature with Clustering Model<br />to Predict the Students Segmentation (Segment <b><font color="red">A</font></b>, <b><font color="red">B</font></b>, <b><font color="red">C</font></b>, <b><font color="red">D</font></b>, <b><font color="red">E</font></b>, or <b><font color="red">F</font></b>)
+              </font>
+            </div>
+            <br />
+            <em>
+              <font size="1">
+                Click <a href="https://colab.research.google.com/drive/1vg2jqueO_wlnDKMkgKWMgsB-TndnSeF-?usp=sharing" target="_blank" style="color: cadetblue;"><b>here</b></a> to view the Clustering Model that is used to Predict the Students Segmentation
+              </font>
+            </em>
             <form action="/resultt" method="POST">
               <div class="input__box" for="name">
-                Name
-                <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Fill Their Name" name="name" />
+                Name<input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Fill Their Name" name="name" />
               </div>
               <div class="input__box" for="parent">
-                Parental Level of Education
-                <font size="1" color="red">
-                  <br />
-                  *Notes :
-                  <br />
-                  0 = Master's Degree
-                  <br />
-                  1 = Bachelor's Degree
-                  <br />
-                  2 = Associate's Degree
-                  <br />
-                  3 = Been to College
-                  <br />
-                  4 = High School
-                  <br />
-                  5 = Been to High School
-                </font>
+                Parental Level of Education<em>
+                  <font size="1" color="red">
+                    <br />
+                    *Notes :
+                    <br />
+                    0 = Master's Degree
+                    <br />
+                    1 = Bachelor's Degree
+                    <br />
+                    2 = Associate's Degree
+                    <br />
+                    3 = Been to College
+                    <br />
+                    4 = High School
+                    <br />
+                    5 = Been to High School
+                  </font>
+                </em>
                 <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="parent" type="number" placeholder="Fill Their Parental Level of Education" name="parent" min="0" max="5" />
               </div>
               <div class="input__box" for="lunch">
-                Lunch Fulfillment
-                <font size="1" color="red">
-                  <br />
-                  *Notes :
-                  <br />
-                  1 = Fulfilled
-                  <br />
-                  0 = Not / Less Fulfilled
-                </font>
+                Lunch Fulfillment<em>
+                  <font size="1" color="red">
+                    <br />
+                    *Notes :
+                    <br />
+                    1 = Fulfilled
+                    <br />
+                    0 = Not / Less Fulfilled
+                  </font>
+                </em>
                 <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="lunch" type="number" placeholder="Fill Their Lunch Fulfillment" name="lunch" min="0" max="1" />
               </div>
               <div class="input__box" for="test">
-                Test Preparation Completion
-                <font size="1" color="red">
-                  <br />
-                  *Notes :
-                  <br />
-                  1 = Completed
-                  <br />
-                  0 = Not Completed
-                </font>
+                Test Preparation Completion<em>
+                  <font size="1" color="red">
+                    <br />
+                    *Notes :
+                    <br />
+                    1 = Completed
+                    <br />
+                    0 = Not Completed
+                  </font>
+                </em>
                 <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="test" type="number" placeholder="Fill Their Test Preparation Course Completion" name="test" min="0" max="1" />
               </div>
               <div class="input__box" for="math">
-                Mathematic Score
-                <font size="1" color="red">
-                  <br />
-                  *Notes :
-                  <br />
-                  0 - 100
-                </font>
+                Mathematic Score<em>
+                  <font size="1" color="red">
+                    <br />
+                    *Notes :
+                    <br />
+                    0 - 100
+                  </font>
+                </em>
                 <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="math" type="number" placeholder="Fill Their Mathematic Score" name="math" min="0" max="100" />
               </div>
               <div class="input__box" for="reading">
-                Reading Score
-                <font size="1" color="red">
-                  <br />
-                  *Notes :
-                  <br />
-                  0 - 100
-                </font>
+                Reading Score<em>
+                  <font size="1" color="red">
+                    <br />
+                    *Notes :
+                    <br />
+                    0 - 100
+                  </font>
+                </em>
                 <input required class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="reading" type="number" placeholder="Fill Their Reading Score" name="reading" min="0" max="100" />
               </div>
 
