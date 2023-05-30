@@ -1,5 +1,3 @@
-# ML-Flask
-Creating a Website that has Machine Learning feature to predict Students Performance segmentation (using Clustering Model)
+# Machine Learning - Flask
 
-A Website with Flask framework that has Machine Learning feature (using Clustering Model) to predict Students Performance segmentation 
-(Grade A, B, C, D, E, or even F Student) (6 Clusters) using StudentsPerformance.csv dataset
+Created a website that has machine learning feature in it which can perform segmentation/clustering/grouping on students in America based on the StudentsPerformance.csv dataset. Student segmentation is a practice of separating students into groups/segments/clusters that have similar characteristics with other students in each cluster. In the process, students will be divided into several segments/groups/clusters to find the right teaching techniques for each student in each segment so that each student can get the right and appropriate teaching technique according to their own characteristics to achieve better exam results. In addition, this will also help students meet their learning needs as a student. Therefore, student segmentation will be very beneficial for both students and schools.
